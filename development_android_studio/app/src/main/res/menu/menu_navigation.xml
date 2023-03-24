@@ -2,17 +2,20 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/dashboard"
-        android:title="Dashboard"
-        android:icon="@drawable/hate"/>
-    <item
         android:id="@+id/home"
         android:title="Home"
         android:icon="@drawable/seeth"/>
-
     <item
-        android:id="@+id/about"
-        android:title="About"
+        android:id="@+id/scan"
+        android:title="Scan"
+        android:icon="@drawable/negative"/>
+    <item
+        android:id="@+id/pantry"
+        android:title="Pantry"
+        android:icon="@drawable/negative"/>
+    <item
+        android:id="@+id/recipe"
+        android:title="Recipe"
         android:icon="@drawable/negative"/>
 
 </menu>
