@@ -1,4 +1,4 @@
-package InventorySystem;
+package com.example.pantrypal;
 
 public class Item {
     /**
