@@ -7,6 +7,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.content.Intent;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -48,5 +50,10 @@ public class Scan extends AppCompatActivity {
                 return false;
             }
         });
+    }
+
+    public void receiptHistory(View view) {
+        Intent intent = new Intent(this, ReceiptHistoryActivity.class);
+        startActivity(intent);
     }
 }
