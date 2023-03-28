@@ -10,10 +10,23 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Recipe"
+        android:text="Recipes"
         android:textSize="50sp"
-        android:textStyle="bold"
-        android:layout_centerInParent="true"/>
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/hyperlink"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="See available recipes"
+        android:textSize="35sp"
+        android:autoLink="web"
+        android:textColorLink="@color/teal_700"
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="openLink"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
