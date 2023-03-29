@@ -1,6 +1,7 @@
 package com.example.pantrypal;
 
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 
 import android.content.Context;
 import androidx.recyclerview.widget.RecyclerView;
@@ -9,67 +10,59 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-public class Inventory extends RecyclerView.Adapter<Inventory.InventoryViewHolder>{
+public class Inventory {
     /**
-     * List of items in this inventory
+     * List of items by location
      */
-    private HashMap<Integer, Item> itemMap = new HashMap<Integer, Item>();
+    private ArrayList<Item> fridgeList;
+    private ArrayList<Item> freezerList;
+    private ArrayList<Item> cabinetList;
 
-    /**
-     * ???
-     */
-    private Context mCtx;
-
-    @Override
-    public Inventory.InventoryViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        //inflating and returning our view holder
-        LayoutInflater inflater = LayoutInflater.from(mCtx);
-        View view = inflater.inflate(R.layout.layout_products, null);
-        return new Inventory.InventoryViewHolder(view);
+    public Inventory(){
+        fridgeList = new ArrayList<Item>();
+        freezerList = new ArrayList<Item>();
+        cabinetList = new ArrayList<Item>();
     }
 
-    @Override
-    public void onBindViewHolder(Inventory.InventoryViewHolder holder, int position) {
-        //getting the product of the specified position
-        Item product = itemMap.get(position);
+    public ArrayList<Item> getfridgeList(){
 
-        //binding the data with the viewholder views
-//        holder.textViewTitle.setText(product.getTitle());
-//        holder.textViewShortDesc.setText(product.getShortdesc());
-//        holder.textViewRating.setText(String.valueOf(product.getRating()));
-//        holder.textViewPrice.setText(String.valueOf(product.getPrice()));
-
-
+        return this.fridgeList;
     }
 
-    @Override
-    public int getItemCount() {
-        return itemMap.size();
+    public ArrayList<Item> getfreezerList(){
+
+        return this.freezerList;
     }
 
-    public HashMap<Integer, Item> getItemMap(){
-        return this.itemMap;
+    public ArrayList<Item> getcabinetList(){
+
+        return this.cabinetList;
     }
 
-    public void addItem(Item item){
-        itemMap.put(item.getI_Id(), item);
+    public void addFridgeItem(Item item){
+
+        fridgeList.add(item);
     }
 
-    public Item deleteItem(int id){
-        return itemMap.remove(Integer.valueOf(id));
+    public void addFreezerItem(Item item){
+        freezerList.add(item);
     }
 
-    class InventoryViewHolder extends RecyclerView.ViewHolder {
+    public void addCabinetItem(Item item){
 
-        TextView textViewTitle, textViewShortDesc, textViewRating, textViewPrice;
-
-        public InventoryViewHolder(View itemView) {
-            super(itemView);
-
-//            textViewTitle = itemView.findViewById(R.id.textViewTitle);
-//            textViewShortDesc = itemView.findViewById(R.id.textViewShortDesc);
-//            textViewRating = itemView.findViewById(R.id.textViewRating);
-//            textViewPrice = itemView.findViewById(R.id.textViewPrice);
-        }
+        cabinetList.add(item);
     }
+
+    public Item deleteFridgeItem(int position){
+        return fridgeList.remove(position);
+    }
+
+    public Item deleteFreezerItem(int position){
+        return freezerList.remove(position);
+    }
+
+    public Item deleteCabinetItem(int positon){
+        return cabinetList.remove(positon);
+    }
+
 }

@@ -26,6 +26,11 @@ public class Item {
      */
     private int i_Amount;
 
+    /**
+     * Location of item
+     */
+    private String i_Location;
+
     public Item(int id, String date){
         this.i_Id = Integer.valueOf(id);
         this.i_Name = Integer.toString(id);
@@ -34,12 +39,13 @@ public class Item {
         this.i_Amount = 1;
     }
 
-    public Item(int id, String name, String date, String category, int amount){
+    public Item(int id, String name, String date, String category, int amount, String location){
         this.i_Id = Integer.valueOf(id);;
         this.i_Name = name;
         this.i_Date = date;
         this.i_Category = category;
         this.i_Amount = amount;
+        this.i_Location = location;
     }
 
     public void setI_Id(int id){
