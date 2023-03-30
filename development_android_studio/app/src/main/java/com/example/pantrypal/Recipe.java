@@ -10,6 +10,10 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import android.util.Log;
+
+import java.util.ArrayList;
+
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Recipe extends AppCompatActivity {
@@ -22,6 +26,11 @@ public class Recipe extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe);
+
+        Bundle bundle = getIntent().getExtras();
+        ArrayList<Item> itemList = bundle.getParcelableArrayList("itemList");
+
+        Log.i("item1", itemList.get(0).getI_Name());
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
