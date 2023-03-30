@@ -26,11 +26,14 @@ public class Recipe extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe);
+        Intent intent = getIntent();
+        ArrayList<Item> itemList;
+        if(intent.hasExtra("itemList")) {
+            Bundle bundle = getIntent().getExtras();
+            itemList = bundle.getParcelableArrayList("itemList");
 
-        Bundle bundle = getIntent().getExtras();
-        ArrayList<Item> itemList = bundle.getParcelableArrayList("itemList");
-
-        Log.i("item1", itemList.get(0).getI_Name());
+            Log.i("item1", itemList.get(0).getI_Name());
+        }
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
