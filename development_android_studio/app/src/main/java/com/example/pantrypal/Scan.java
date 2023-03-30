@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
+import android.content.Intent;
 import android.widget.Button;
 import android.widget.ImageView;
 
@@ -74,5 +75,10 @@ public class Scan extends AppCompatActivity {
             Bitmap photo = (Bitmap) data.getExtras().get("data");
             click_image.setImageBitmap(photo);
         }
+    }
+
+    public void receiptHistory(View view) {
+        Intent intent = new Intent(this, ReceiptHistoryActivity.class);
+        startActivity(intent);
     }
 }

@@ -12,6 +12,7 @@
         android:theme="@style/Theme.Pantrypal"
         tools:targetApi="31">
         <activity
+            android:name=".ReceiptHistoryActivity"
             android:name=".Notifications"
             android:exported="false" />
         <activity

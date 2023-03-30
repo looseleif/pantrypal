@@ -53,4 +53,17 @@
         app:itemTextColor="@drawable/selector"
         app:menu="@menu/menu_navigation" />
 
+    <Button
+        android:id="@+id/scanHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="31dp"
+        android:layout_marginTop="26dp"
+        app:backgroundTint="@color/teal_700"
+        android:onClick="receiptHistory"
+        android:text="Receipt History" />
+
 </RelativeLayout>
