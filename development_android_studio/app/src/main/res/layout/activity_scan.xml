@@ -34,7 +34,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="31dp"
         android:layout_marginTop="26dp"
-        android:background="@color/teal_700"
+        app:backgroundTint="@color/teal_700"
         android:onClick="receiptHistory"
         android:text="Receipt History" />
 
