@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="33df0caf-9463-4f83-bb8f-60ea5b770e45" name="Changes" comment="" />
+    <list default="true" id="33df0caf-9463-4f83-bb8f-60ea5b770e45" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/development_android_studio/app/src/main/java/com/example/pantrypal/Settings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/development_android_studio/app/src/main/res/drawable/settings.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/development_android_studio/app/src/main/res/layout/activity_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/development_android_studio/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/development_android_studio/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/development_android_studio/app/src/main/java/com/example/pantrypal/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/development_android_studio/app/src/main/java/com/example/pantrypal/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/development_android_studio/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/development_android_studio/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/development_android_studio/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/development_android_studio/app/src/main/res/values/strings.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,7 +36,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "C:/Users/phoeb/OneDrive/Documents/GitHub/pantrypal/development_android_studio/app"
+    "last_opened_file_path": "C:/Users/aribr/Desktop/5115 Project/pantrypal/development_android_studio"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
