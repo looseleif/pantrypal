@@ -57,12 +57,30 @@
 
         </LinearLayout>
 
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Recent Receipts"
+            android:textStyle="bold|italic"
+            android:typeface="monospace" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recentReceiptList"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginVertical="10dp"
             android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Expiring Soon"
+            android:textStyle="bold|italic"
+            android:typeface="monospace" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/expiringList"
