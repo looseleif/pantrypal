@@ -4,18 +4,19 @@
     <item
         android:id="@+id/home"
         android:title="Home"
-        android:icon="@drawable/seeth"/>
+        android:icon="@drawable/home"/>
     <item
         android:id="@+id/scan"
         android:title="Scan"
-        android:icon="@drawable/negative"/>
+        android:icon="@drawable/scannn"/>
     <item
         android:id="@+id/pantry"
-        android:title="Pantry"
-        android:icon="@drawable/negative"/>
+        android:icon="@drawable/cabinet"
+        android:iconTintMode="add"
+        android:title="Pantry" />
     <item
         android:id="@+id/recipe"
         android:title="Recipe"
-        android:icon="@drawable/negative"/>
+        android:icon="@drawable/recipe"/>
 
 </menu>
