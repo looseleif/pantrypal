@@ -1,45 +1,28 @@
-
 package com.example.pantrypal;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-
-import android.util.Log;
-
-import java.util.ArrayList;
+import android.content.Intent;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Recipe extends AppCompatActivity {
-    public void openLink(View view) {
-        Uri uri = Uri.parse("https://foodcombo.com/find-recipes-by-ingredients/");
-        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-        startActivity(intent);
-    }
+public class ReceiptHistoryActivity extends AppCompatActivity {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recipe);
-        Intent intent = getIntent();
-        ArrayList<Item> itemList;
-        if(intent.hasExtra("itemList")) {
-            Bundle bundle = getIntent().getExtras();
-            itemList = bundle.getParcelableArrayList("itemList");
-
-            Log.i("item1", itemList.get(0).getI_Name());
-        }
+        setContentView(R.layout.activity_receipt_history);
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
 
         // Set Home selected
-        bottomNavigationView.setSelectedItemId(R.id.recipe);
+        bottomNavigationView.setSelectedItemId(R.id.scan);
 
         // Perform item selected listener
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -53,19 +36,23 @@ public class Recipe extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.scan:
-                        startActivity(new Intent(getApplicationContext(),Scan.class));
-                        overridePendingTransition(0,0);
                         return true;
                     case R.id.pantry:
                         startActivity(new Intent(getApplicationContext(),Pantry.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.recipe:
+                        startActivity(new Intent(getApplicationContext(),Recipe.class));
+                        overridePendingTransition(0,0);
                         return true;
-
                 }
                 return false;
             }
         });
+    }
+
+    public void toScanner(View view) {
+        Intent intent = new Intent(this, Scan.class);
+        startActivity(intent);
     }
 }

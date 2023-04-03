@@ -7,6 +7,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import java.util.HashMap;
 import java.util.ArrayList;
@@ -46,6 +49,24 @@ public class Pantry extends AppCompatActivity {
 
         ItemAdapter cabinetAdapter = new ItemAdapter(this, inventory.getcabinetList());
         cabinetView.setAdapter(cabinetAdapter);
+
+        Button recipeButton = (Button) findViewById(R.id.find_recipe);
+        recipeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Pantry.this, Recipe.class);
+                ArrayList<Item> fullInventory = new ArrayList<Item>();
+                fullInventory.addAll(inventory.getfridgeList());
+                fullInventory.addAll(inventory.getfreezerList());
+                fullInventory.addAll(inventory.getcabinetList());
+
+
+                Bundle bundle = new Bundle();
+                bundle.putParcelableArrayList("itemList", fullInventory);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);

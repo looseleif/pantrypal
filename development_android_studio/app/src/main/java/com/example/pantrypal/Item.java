@@ -1,6 +1,11 @@
 package com.example.pantrypal;
 
-public class Item {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
+public class Item implements Parcelable{
     /**
      * Id of item
      */
@@ -48,6 +53,31 @@ public class Item {
         this.i_Location = location;
     }
 
+    protected Item(Parcel in) {
+        if (in.readByte() == 0) {
+            i_Id = null;
+        } else {
+            i_Id = in.readInt();
+        }
+        i_Name = in.readString();
+        i_Date = in.readString();
+        i_Category = in.readString();
+        i_Amount = in.readInt();
+        i_Location = in.readString();
+    }
+
+    public static final Creator<Item> CREATOR = new Creator<Item>() {
+        @Override
+        public Item createFromParcel(Parcel in) {
+            return new Item(in);
+        }
+
+        @Override
+        public Item[] newArray(int size) {
+            return new Item[size];
+        }
+    };
+
     public void setI_Id(int id){
         this.i_Id = Integer.valueOf(id);
     }
@@ -86,5 +116,25 @@ public class Item {
 
     public int getI_Amount(){
         return this.i_Amount;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel parcel, int i) {
+        if (i_Id == null) {
+            parcel.writeByte((byte) 0);
+        } else {
+            parcel.writeByte((byte) 1);
+            parcel.writeInt(i_Id);
+        }
+        parcel.writeString(i_Name);
+        parcel.writeString(i_Date);
+        parcel.writeString(i_Category);
+        parcel.writeInt(i_Amount);
+        parcel.writeString(i_Location);
     }
 }
