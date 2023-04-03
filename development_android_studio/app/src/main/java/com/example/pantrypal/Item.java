@@ -118,6 +118,14 @@ public class Item implements Parcelable{
         return this.i_Amount;
     }
 
+    public void setI_Location(String location) {
+        this.i_Location = i_Location;
+    }
+
+    public String getI_Location() {
+        return i_Location;
+    }
+
     @Override
     public int describeContents() {
         return 0;
