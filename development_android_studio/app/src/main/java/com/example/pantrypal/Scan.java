@@ -16,6 +16,8 @@ import android.widget.ImageView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import java.io.ByteArrayOutputStream;
+
 public class Scan extends AppCompatActivity {
     private static final int pic_id = 100;
 
@@ -63,7 +65,8 @@ public class Scan extends AppCompatActivity {
         camera_open.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(cameraIntent, pic_id);
+                //startActivityForResult(cameraIntent, pic_id);
+                startActivityForResult(cameraIntent, 0);
             }
         });
 
@@ -71,10 +74,18 @@ public class Scan extends AppCompatActivity {
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == pic_id) {
-            Bitmap photo = (Bitmap) data.getExtras().get("data");
-            click_image.setImageBitmap(photo);
-        }
+        Bitmap photo = (Bitmap) data.getExtras().get("data");
+//        if (requestCode == pic_id) {
+//            Bitmap photo = (Bitmap) data.getExtras().get("data");
+//            click_image.setImageBitmap(photo);
+//        }
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        photo.compress(Bitmap.CompressFormat.PNG, 90, stream);
+        byte[] image = stream.toByteArray();
+
+        Intent intent = new Intent(this, ScanConfirm.class);
+        intent.putExtra("photo", image);
+        startActivity(intent);
     }
 
     public void receiptHistory(View view) {
