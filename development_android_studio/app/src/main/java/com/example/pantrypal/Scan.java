@@ -61,7 +61,7 @@ public class Scan extends AppCompatActivity {
         });
 
         camera_open = findViewById(R.id.camera_button);
-        click_image = findViewById(R.id.click_image);
+        //click_image = findViewById(R.id.click_image);
         camera_open.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);

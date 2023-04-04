@@ -21,7 +21,10 @@ public class ScanConfirm extends AppCompatActivity {
 
         setContentView(R.layout.activity_scan_confirmation);
         imageView = findViewById(R.id.confirm_image);
-        imageView.setImageBitmap(bitmap);
+        //imageView.setImageBitmap(bitmap);
+        //OR
+        imageView.setImageResource(R.drawable.receipt_ex);
+
         //Bundle bundle = getIntent().getExtras();
         //if (bundle != null) {
             //int resId = bundle.getInt("resId");
