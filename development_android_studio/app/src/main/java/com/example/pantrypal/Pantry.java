@@ -69,6 +69,18 @@ public class Pantry extends AppCompatActivity {
             }
         });
 
+        Button editButton = (Button) findViewById(R.id.edit);
+        editButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Pantry.this, PantryEdit.class);
+//                Bundle bundle = new Bundle();
+//                bundle.putParcelableArrayList("itemList", fullInventory);
+//                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
 

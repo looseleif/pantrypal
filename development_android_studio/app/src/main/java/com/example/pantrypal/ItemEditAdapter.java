@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -25,7 +26,7 @@ public class ItemEditAdapter extends RecyclerView.Adapter<ItemEditAdapter.ItemEd
     public ItemEditorViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //inflating and returning our view holder
         LayoutInflater inflater = LayoutInflater.from(mCtx);
-        View view = inflater.inflate(R.layout.item_row, null);
+        View view = inflater.inflate(R.layout.item_row_edit, null);
         return new ItemEditorViewHolder(view);
     }
 
@@ -34,7 +35,8 @@ public class ItemEditAdapter extends RecyclerView.Adapter<ItemEditAdapter.ItemEd
         //getting the product of the specified position
         Item item = itemList.get(position);
         holder.textViewName.setText(item.getI_Name());
-        holder.textViewDate.setText(item.getI_Date());
+        holder.editViewAmount.setText(String.valueOf(item.getI_Amount()), TextView.BufferType.EDITABLE);
+        holder.editViewDate.setText(item.getI_Date(), TextView.BufferType.EDITABLE);
 
         //binding the data with the viewholder views
 //        holder.textViewTitle.setText(product.getTitle());
@@ -53,12 +55,14 @@ public class ItemEditAdapter extends RecyclerView.Adapter<ItemEditAdapter.ItemEd
 
     class ItemEditorViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textViewName, textViewDate;
+        TextView textViewName;
+        EditText editViewAmount, editViewDate;
 
         public ItemEditorViewHolder(View itemView) {
             super(itemView);
             textViewName = itemView.findViewById(R.id.item_name);
-            textViewDate = itemView.findViewById(R.id.item_exp_date);
+            editViewAmount = itemView.findViewById(R.id.editAmount);
+            editViewDate = itemView.findViewById(R.id.editDate);
         }
 
     }
