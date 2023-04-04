@@ -39,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
         Gson gson = new Gson();
         String json;
 
-        if(sharedPreferences.contains("task list")){
+        //if the pantry list has items, add them to expiring soon
+        if(sharedPreferences.contains("task list")) {
             json = sharedPreferences.getString("task list", null);
             Type type = new TypeToken<ArrayList<Item>>() {}.getType();
             expiringSoonInventoryList = gson.fromJson(json, type);
@@ -55,6 +56,13 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
+        if(expiringSoonInventoryList.isEmpty()){
+            Item emptyReceiptsItem = new Item(0, "You have not scanned any receipts yet!", "", "", 1, "");
+            recentReceipts.add(emptyReceiptsItem);
+        } else {
+            Item anyReceiptsItem = new Item(0, "Receipt 1", "4/6/2023", "", 1, "");
+            recentReceipts.add(anyReceiptsItem);
+        }
         //RECYCLER VIEWS
         //recent receipts recycler view
         RecyclerView recentReceiptView = (RecyclerView) findViewById(R.id.recentReceiptList);

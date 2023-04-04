@@ -27,7 +27,7 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="10dp"
                 android:layout_weight="0"
-                android:contentDescription="logo"
+                android:contentDescription="@string/logo"
                 android:minWidth="64dp"
                 app:srcCompat="@drawable/logo" />
 
@@ -40,7 +40,7 @@
                 android:autoSizeTextType="uniform"
                 android:gravity="center"
                 android:lineBreakWordStyle="phrase"
-                android:text="PantryPal"
+                android:text="@string/PantryPal"
                 android:textStyle="bold"
                 android:typeface="monospace" />
 
@@ -51,7 +51,7 @@
                 android:layout_marginHorizontal="10dp"
                 android:layout_marginVertical="10dp"
                 android:backgroundTint="#00FFFFFF"
-                android:contentDescription="Settings"
+                android:contentDescription="@string/Settings"
                 app:srcCompat="@drawable/settings"
                 tools:layout_weight="0" />
 
@@ -62,7 +62,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Recent Receipts"
+            android:text="@string/RecentReceipts"
+            android:textSize="24sp"
             android:textStyle="bold|italic"
             android:typeface="monospace" />
 
@@ -78,7 +79,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Expiring Soon"
+            android:text="@string/ExpiringSoon"
+            android:textSize="24sp"
             android:textStyle="bold|italic"
             android:typeface="monospace" />
 
