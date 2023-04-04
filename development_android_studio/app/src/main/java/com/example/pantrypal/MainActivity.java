@@ -31,24 +31,29 @@ public class MainActivity extends AppCompatActivity {
 
         //TODO implement lists for receipts
         ArrayList<Item> recentReceipts = new ArrayList<Item>();
+        expiringSoonInventoryList = new ArrayList<Item>();
 
         //import inventory from file
         expiringSoonInventory = new Inventory();
         SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
         Gson gson = new Gson();
-        String json = sharedPreferences.getString("task list", null);
-        Type type = new TypeToken<ArrayList<Item>>() {}.getType();
-        expiringSoonInventoryList = gson.fromJson(json, type);
-        //add items from file to inventory
-        expiringSoonInventoryList.forEach(item->{
-            if(item.getI_Location().equals("Cabinet")){
-                expiringSoonInventory.addCabinetItem(item);
-            } else if (item.getI_Location().equals("Fridge")) {
-                expiringSoonInventory.addFridgeItem(item);
-            }else{
-                expiringSoonInventory.addFreezerItem(item);
-            }
-        });
+        String json;
+
+        if(sharedPreferences.contains("task list")){
+            json = sharedPreferences.getString("task list", null);
+            Type type = new TypeToken<ArrayList<Item>>() {}.getType();
+            expiringSoonInventoryList = gson.fromJson(json, type);
+            //add items from file to inventory
+            expiringSoonInventoryList.forEach(item->{
+                if(item.getI_Location().equals("Cabinet")){
+                    expiringSoonInventory.addCabinetItem(item);
+                } else if (item.getI_Location().equals("Fridge")) {
+                    expiringSoonInventory.addFridgeItem(item);
+                }else{
+                    expiringSoonInventory.addFreezerItem(item);
+                }
+            });
+        }
 
         //RECYCLER VIEWS
         //recent receipts recycler view
