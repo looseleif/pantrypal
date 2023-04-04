@@ -51,6 +51,8 @@ public class ScanConfirm extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Bitmap photo = (Bitmap) data.getExtras().get("data");
-        imageView.setImageBitmap(photo);
+        //imageView.setImageBitmap(photo);
+        // OR
+        imageView.setImageResource(R.drawable.receipt_ex);
     }
 }
