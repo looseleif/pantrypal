@@ -40,6 +40,7 @@
                 android:layout_marginTop="0dp"
                 android:layout_marginRight="160dp"
                 android:layout_weight="1"
+                app:backgroundTint="@color/teal_700"
                 android:text="Edit" />
 
             <Button
@@ -48,6 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="10dp"
                 android:layout_weight="1"
+                app:backgroundTint="@color/teal_700"
                 android:text="Find Recipe" />
         </LinearLayout>
 
