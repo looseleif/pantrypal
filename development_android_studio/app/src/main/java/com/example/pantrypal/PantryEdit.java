@@ -1,37 +1,32 @@
 
 package com.example.pantrypal;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageButton;
 
-import android.util.Log;
-
-import java.util.HashMap;
-import java.util.ArrayList;
-import android.content.SharedPreferences;
-
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-import java.lang.reflect.Type;
-
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
-public class Pantry extends AppCompatActivity {
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+
+public class PantryEdit extends AppCompatActivity {
     ArrayList<Item> fullInventory;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pantry);
+        setContentView(R.layout.activity_pantry_edit);
 
         Inventory inventory = createInventory();
 
@@ -40,34 +35,23 @@ public class Pantry extends AppCompatActivity {
         fridgeView.setHasFixedSize(true);
         fridgeView.setLayoutManager(new LinearLayoutManager(this));
         //add list of objects to adapter
-        ItemAdapter fridgeAdapter = new ItemAdapter(this, inventory.getfridgeList());
+        ItemEditAdapter fridgeAdapter = new ItemEditAdapter(this, inventory.getfridgeList());
         fridgeView.setAdapter(fridgeAdapter);
 
         RecyclerView freezerView = (RecyclerView) findViewById(R.id.FreezerList);
         freezerView.setHasFixedSize(true);
         freezerView.setLayoutManager(new LinearLayoutManager(this));
 
-        ItemAdapter freezerAdapter = new ItemAdapter(this, inventory.getfreezerList());
+        ItemEditAdapter freezerAdapter = new ItemEditAdapter(this, inventory.getfreezerList());
         freezerView.setAdapter(freezerAdapter);
 
         RecyclerView cabinetView = (RecyclerView) findViewById(R.id.CabinateList);
         cabinetView.setHasFixedSize(true);
         cabinetView.setLayoutManager(new LinearLayoutManager(this));
 
-        ItemAdapter cabinetAdapter = new ItemAdapter(this, inventory.getcabinetList());
+        ItemEditAdapter cabinetAdapter = new ItemEditAdapter(this, inventory.getcabinetList());
         cabinetView.setAdapter(cabinetAdapter);
 
-        Button recipeButton = (Button) findViewById(R.id.find_recipe);
-        recipeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Pantry.this, Recipe.class);
-                Bundle bundle = new Bundle();
-                bundle.putParcelableArrayList("itemList", fullInventory);
-                intent.putExtras(bundle);
-                startActivity(intent);
-            }
-        });
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
@@ -141,8 +125,8 @@ public class Pantry extends AppCompatActivity {
     }
 
     @Override
-    protected void onPause(){
-        super.onPause();
+    protected void onStop(){
+        super.onStop();
         SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         Gson gson = new Gson();
