@@ -24,7 +24,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         //inflating and returning our view holder
         LayoutInflater inflater = LayoutInflater.from(mCtx);
-        View view = inflater.inflate(R.layout.item_row, null);
+        View view = inflater.inflate(R.layout.item_row, parent, false);
         return new ItemViewHolder(view);
     }
 
@@ -34,6 +34,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         Item item = itemList.get(position);
         holder.textViewName.setText(item.getI_Name());
         holder.textViewDate.setText(item.getI_Date());
+        holder.textViewAmount.setText(String.valueOf(item.getI_Amount()));
 
         //binding the data with the viewholder views
 //        holder.textViewTitle.setText(product.getTitle());
@@ -52,12 +53,13 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
 
     class ItemViewHolder extends RecyclerView.ViewHolder {
 
-        TextView textViewName, textViewDate;
+        TextView textViewName, textViewDate, textViewAmount;
 
         public ItemViewHolder(View itemView) {
             super(itemView);
             textViewName = itemView.findViewById(R.id.item_name);
             textViewDate = itemView.findViewById(R.id.item_exp_date);
+            textViewAmount = itemView.findViewById(R.id.item_amount);
         }
 
     }

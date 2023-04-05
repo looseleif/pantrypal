@@ -8,8 +8,9 @@
         android:id="@+id/item_name"
         android:layout_width="215dp"
         android:layout_height="wrap_content"
-        android:paddingLeft="0dp"
-        android:text="TextView" />
+        android:paddingLeft="15dp"
+        android:text="TextView"
+        android:textSize="15sp" />
 
     <EditText
         android:id="@+id/editAmount"
