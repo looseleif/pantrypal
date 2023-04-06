@@ -24,24 +24,23 @@ tools:context=".ScanConfirm">
         android:id="@+id/back_to_cam"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/bottom_navigation"
+        android:layout_below="@+id/confirm_image"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="59dp"
-        android:layout_marginTop="86dp"
+        android:layout_marginStart="52dp"
         android:layout_marginBottom="38dp"
         android:text="Retake"
-        app:backgroundTint="@color/teal_700" />
+        app:backgroundTint="@color/pantry1" />
 
     <Button
         android:id="@+id/confirmed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/bottom_navigation"
+        android:layout_below="@+id/confirm_image"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="59dp"
         android:layout_marginBottom="38dp"
         android:text="OK"
-        app:backgroundTint="@color/teal_700" />
+        app:backgroundTint="@color/pantry1" />
 
     <ImageView
         android:id="@+id/confirm_image"
@@ -55,15 +54,5 @@ tools:context=".ScanConfirm">
         android:layout_marginTop="26dp"
         android:layout_marginEnd="75dp"
         android:layout_marginBottom="128dp" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_alignParentBottom="true"
-        app:itemBackground="@color/teal_700"
-        app:itemIconTint="@drawable/selector"
-        app:itemTextColor="@drawable/selector"
-        app:menu="@menu/menu_navigation" />
 
 </RelativeLayout>
