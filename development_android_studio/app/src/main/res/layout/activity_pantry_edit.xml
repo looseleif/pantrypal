@@ -44,16 +44,28 @@
                 android:layout_width="166dp"
                 android:layout_height="match_parent"
                 android:paddingLeft="10dp"
-                android:text="Fridge" />
+                android:text="Fridge"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/textView6"
+                android:layout_width="102dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingRight="10dp"
+                android:text="Amount"
+                android:textAlignment="textEnd"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:paddingRight="10dp"
                 android:text="Expiration Date"
-                android:textAlignment="textEnd" />
+                android:textAlignment="textEnd"
+                android:textSize="15sp" />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -66,7 +78,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
-            android:text="Freezer" />
+            android:text="Freezer"
+            android:textSize="15sp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/FreezerList"
@@ -78,10 +91,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
-            android:text="Cabinet" />
+            android:text="Cabinet"
+            android:textSize="15sp" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/CabinateList"
+            android:id="@+id/CabinetList"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 

@@ -23,12 +23,14 @@ import java.util.ArrayList;
 
 public class PantryEdit extends AppCompatActivity {
     ArrayList<Item> fullInventory;
+
+    Inventory inventory;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pantry_edit);
 
-        Inventory inventory = createInventory();
+        inventory = createInventory();
 
         //create recycler view object and set layout info
         RecyclerView fridgeView = (RecyclerView) findViewById(R.id.FridgeList);
@@ -45,13 +47,22 @@ public class PantryEdit extends AppCompatActivity {
         ItemEditAdapter freezerAdapter = new ItemEditAdapter(this, inventory.getfreezerList());
         freezerView.setAdapter(freezerAdapter);
 
-        RecyclerView cabinetView = (RecyclerView) findViewById(R.id.CabinateList);
+        RecyclerView cabinetView = (RecyclerView) findViewById(R.id.CabinetList);
         cabinetView.setHasFixedSize(true);
         cabinetView.setLayoutManager(new LinearLayoutManager(this));
 
         ItemEditAdapter cabinetAdapter = new ItemEditAdapter(this, inventory.getcabinetList());
         cabinetView.setAdapter(cabinetAdapter);
 
+
+        Button editButton = (Button) findViewById(R.id.done);
+        editButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(PantryEdit.this, Pantry.class);
+                startActivity(intent);
+            }
+        });
 
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
@@ -97,6 +108,26 @@ public class PantryEdit extends AppCompatActivity {
             Type type = new TypeToken<ArrayList<Item>>() {}.getType();
             fullInventory = gson.fromJson(json, type);
 
+            ArrayList<Item> fridge = new ArrayList<Item>();
+            ArrayList<Item> freezer = new ArrayList<Item>();
+            ArrayList<Item> cabinet = new ArrayList<Item>();
+
+            if(sharedPreferences.contains("FridgeList")){
+                json = sharedPreferences.getString("FridgeList", null);
+                type = new TypeToken<ArrayList<Item>>() {}.getType();
+                fridge = gson.fromJson(json, type);
+            }
+            if(sharedPreferences.contains("FreezerList")){
+                json = sharedPreferences.getString("FreezerList", null);
+                type = new TypeToken<ArrayList<Item>>() {}.getType();
+                freezer = gson.fromJson(json, type);
+            }
+            if(sharedPreferences.contains("CabinetList")){
+                json = sharedPreferences.getString("CabinetList", null);
+                type = new TypeToken<ArrayList<Item>>() {}.getType();
+                cabinet = gson.fromJson(json, type);
+            }
+
             if (fullInventory == null) {
                 Item milk = new Item(0, "Milk", "10/11/2023", "Diary", 1, "Fridge");
                 Item ice_cream = new Item(1, "Ice Cream", "10/12/2023", "Diary", 1, "Freezer");
@@ -111,14 +142,14 @@ public class PantryEdit extends AppCompatActivity {
                 inventory.addCabinetItem(apples);
             }
             else{
-                fullInventory.forEach(item->{
-                    if(item.getI_Location().equals("Cabinet")){
-                        inventory.addCabinetItem(item);
-                    } else if (item.getI_Location().equals("Fridge")) {
-                        inventory.addFridgeItem(item);
-                    }else{
-                        inventory.addFreezerItem(item);
-                    }
+                fridge.forEach(item->{
+                    inventory.addFridgeItem(item);
+                });
+                freezer.forEach(item->{
+                    inventory.addFreezerItem(item);
+                });
+                cabinet.forEach(item->{
+                    inventory.addCabinetItem(item);
                 });
             }
         return inventory;
@@ -132,6 +163,15 @@ public class PantryEdit extends AppCompatActivity {
         Gson gson = new Gson();
         String json = gson.toJson(fullInventory);
         editor.putString("task list", json);
+
+//        json = gson.toJson(inventory.getfridgeList());
+//        editor.putString("FridgeList", json);
+//
+//        json = gson.toJson(inventory.getfreezerList());
+//        editor.putString("FreezerList", json);
+//
+//        json = gson.toJson(inventory.getcabinetList());
+//        editor.putString("CabinetList", json);
         editor.apply();
 
         Log.i("data saved", "Saved data!");
