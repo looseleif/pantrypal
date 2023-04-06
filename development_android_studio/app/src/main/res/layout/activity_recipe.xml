@@ -26,13 +26,28 @@
         android:layout_marginBottom="0dp"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font2"
+            android:text="Recipes"
+            android:layout_marginTop="20sp"
+            android:layout_marginBottom="20sp"
+            android:textAlignment="center"
+            android:textSize="50sp" />
+
         <Button
             android:id="@+id/done"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:text="Find Recipies"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:fontFamily="@font/font2"
+            android:text="Build Recipe"
+            android:textSize="20sp"
+            android:textStyle="bold"
             app:backgroundTint="@color/pantry1" />
 
         <LinearLayout
@@ -41,21 +56,36 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/textView2"
-                android:layout_width="166dp"
-                android:layout_height="match_parent"
-                android:paddingLeft="10dp"
-                android:text="Fridge" />
-
-            <TextView
-                android:id="@+id/textView6"
+                android:id="@+id/textView18"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:fontFamily="@font/font2"
                 android:paddingRight="10dp"
                 android:text="Expiration Date"
-                android:textAlignment="textEnd" />
+                android:textAlignment="textEnd"
+                android:textSize="35sp" />
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font2"
+            android:paddingLeft="10dp"
+            android:text="Fridge"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="166dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:fontFamily="@font/font2"
+            android:paddingLeft="10dp"
+            android:textSize="35sp"
+            android:text="Fridge" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/FridgeList"
@@ -66,8 +96,11 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/font2"
             android:paddingLeft="10dp"
-            android:text="Freezer" />
+            android:text="Freezer"
+            android:textSize="35sp"
+            android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/FreezerList"
@@ -78,8 +111,11 @@
             android:id="@+id/textView4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/font2"
             android:paddingLeft="10dp"
-            android:text="Cabinet" />
+            android:text="Cabinet"
+            android:textSize="35sp"
+            android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/CabinateList"
