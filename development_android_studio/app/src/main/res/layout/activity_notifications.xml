@@ -8,14 +8,15 @@
 
     <TextView
         android:id="@+id/notifications_title"
-        android:layout_width="182dp"
-        android:layout_height="51dp"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
         android:layout_marginTop="20dp"
         android:text="Notifications"
         android:textSize="34sp"
         android:textStyle="bold"
         android:typeface="normal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.587"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,5 +30,44 @@
         app:layout_constraintHorizontal_bias="0.134"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/frequency"
+        android:layout_width="270dp"
+        android:layout_height="326dp"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.687"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.585">
+
+        <RadioButton
+            android:id="@+id/daily"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Daily" />
+
+        <RadioButton
+            android:id="@+id/few"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="A Few Times A Week" />
+
+        <RadioButton
+            android:id="@+id/weekly"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Weekly" />
+
+        <RadioButton
+            android:id="@+id/never"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Never" />
+    </RadioGroup>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

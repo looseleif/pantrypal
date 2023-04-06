@@ -8,8 +8,8 @@
 
     <TextView
         android:id="@+id/settings_title"
-        android:layout_width="113dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="49dp"
         android:layout_marginTop="20dp"
         android:text="Settings"
         android:textSize="34sp"
@@ -18,20 +18,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/notifications_button"
-        android:layout_width="342dp"
-        android:layout_height="90dp"
-        android:layout_marginBottom="544dp"
-        android:text="Notifications"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:backgroundTint="@color/teal_700"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/settings_back_button"
@@ -43,5 +29,56 @@
         app:layout_constraintHorizontal_bias="0.134"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="541dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/notifications_button"
+            android:layout_width="match_parent"
+            android:layout_height="94dp"
+            android:layout_marginBottom="5dp"
+            android:text="Notifications"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/teal_700" />
+
+        <Button
+            android:id="@+id/profile"
+            android:layout_width="match_parent"
+            android:layout_height="94dp"
+            android:layout_marginBottom="5dp"
+            android:text="Profile"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/teal_700" />
+
+        <Button
+            android:id="@+id/lightDark"
+            android:layout_width="match_parent"
+            android:layout_height="94dp"
+            android:layout_marginBottom="5dp"
+            android:text="Light / Dark Theme"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/teal_700" />
+
+        <Button
+            android:id="@+id/support"
+            android:layout_width="match_parent"
+            android:layout_height="94dp"
+            android:layout_marginBottom="5dp"
+            android:text="Support"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/teal_700" />
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
