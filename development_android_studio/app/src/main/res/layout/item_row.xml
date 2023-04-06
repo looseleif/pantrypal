@@ -7,10 +7,12 @@
 
     <TextView
         android:id="@+id/item_name"
-        android:layout_width="166dp"
+        android:layout_width="225dp"
         android:layout_height="wrap_content"
+        android:layout_weight="2"
         android:paddingStart="15dp"
         android:text="TextView"
+        android:textSize="20sp"
         tools:ignore="RtlSymmetry" />
 
     <TextView
@@ -18,17 +20,19 @@
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:paddingRight="10dp"
-        android:text="TextView"
-        android:textAlignment="textEnd" />
+        android:paddingRight="25dp"
+        android:text="xx"
+        android:textAlignment="textEnd"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/item_exp_date"
-        android:layout_width="50dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:paddingRight="10dp"
-        android:text="TextView"
-        android:textAlignment="textEnd" />
+        android:text="xx/xx/xxxx"
+        android:textAlignment="textEnd"
+        android:textSize="20sp" />
 
 </LinearLayout>

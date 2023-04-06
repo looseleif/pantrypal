@@ -22,6 +22,9 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     ArrayList<Item> expiringSoonInventoryList;
+    ArrayList<Item> expiringSoonFridgeList;
+    ArrayList<Item> expiringSoonFreezerList;
+    ArrayList<Item> expiringSoonCabinetList;
     Inventory expiringSoonInventory;
 
     @Override
@@ -32,6 +35,9 @@ public class MainActivity extends AppCompatActivity {
         //TODO implement lists for receipts
         ArrayList<Item> recentReceipts = new ArrayList<Item>();
         expiringSoonInventoryList = new ArrayList<Item>();
+        expiringSoonFridgeList = new ArrayList<Item>();
+        expiringSoonFreezerList = new ArrayList<Item>();
+        expiringSoonCabinetList = new ArrayList<Item>();
 
         //import inventory from file
         expiringSoonInventory = new Inventory();
@@ -40,24 +46,38 @@ public class MainActivity extends AppCompatActivity {
         String json;
 
         //if the pantry list has items, add them to expiring soon
-        if(sharedPreferences.contains("task list")) {
-            json = sharedPreferences.getString("task list", null);
+        //Get data fromm JSON and add to respective lists.
+        //TODO add check for approaching expiration dates
+        if(sharedPreferences.contains("FridgeList")){
+            json = sharedPreferences.getString("FridgeList", null);
             Type type = new TypeToken<ArrayList<Item>>() {}.getType();
-            expiringSoonInventoryList = gson.fromJson(json, type);
-            //add items from file to inventory
-            expiringSoonInventoryList.forEach(item->{
-                if(item.getI_Location().equals("Cabinet")){
-                    expiringSoonInventory.addCabinetItem(item);
-                } else if (item.getI_Location().equals("Fridge")) {
-                    expiringSoonInventory.addFridgeItem(item);
-                }else{
-                    expiringSoonInventory.addFreezerItem(item);
-                }
+            expiringSoonFridgeList = gson.fromJson(json, type);
+            expiringSoonFridgeList.forEach(item->{
+                expiringSoonInventory.addFridgeItem(item);
+                expiringSoonInventoryList.add(item);
+            });
+        }
+        if(sharedPreferences.contains("FreezerList")){
+            json = sharedPreferences.getString("FreezerList", null);
+            Type type = new TypeToken<ArrayList<Item>>() {}.getType();
+            expiringSoonFreezerList = gson.fromJson(json, type);
+            expiringSoonFreezerList.forEach(item->{
+                expiringSoonInventory.addFreezerItem(item);
+                expiringSoonInventoryList.add(item);
+            });
+        }
+        if(sharedPreferences.contains("CabinetList")){
+            json = sharedPreferences.getString("CabinetList", null);
+            Type type = new TypeToken<ArrayList<Item>>() {}.getType();
+            expiringSoonCabinetList = gson.fromJson(json, type);
+            expiringSoonCabinetList.forEach(item->{
+                expiringSoonInventory.addCabinetItem(item);
+                expiringSoonInventoryList.add(item);
             });
         }
 
         if(expiringSoonInventoryList.isEmpty()){
-            Item emptyReceiptsItem = new Item(0, "You have not scanned any receipts yet!", "", "", 1, "");
+            Item emptyReceiptsItem = new Item(0, "You have not scanned any receipts yet!", "", "",0 , "");
             recentReceipts.add(emptyReceiptsItem);
         } else {
             Item anyReceiptsItem = new Item(0, "Receipt 1", "4/6/2023", "", 1, "");

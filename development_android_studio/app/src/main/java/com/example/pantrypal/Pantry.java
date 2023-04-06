@@ -56,18 +56,6 @@ public class Pantry extends AppCompatActivity {
         ItemAdapter cabinetAdapter = new ItemAdapter(this, inventory.getcabinetList());
         cabinetView.setAdapter(cabinetAdapter);
 
-        Button recipeButton = (Button) findViewById(R.id.find_recipe);
-        recipeButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Pantry.this, Recipe.class);
-                Bundle bundle = new Bundle();
-                bundle.putParcelableArrayList("itemList", fullInventory);
-                intent.putExtras(bundle);
-                startActivity(intent);
-            }
-        });
-
         Button editButton = (Button) findViewById(R.id.edit);
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -145,17 +133,20 @@ public class Pantry extends AppCompatActivity {
         }
 
             if (fullInventory == null) {
-                Item milk = new Item(0, "Milk", "10/11/2023", "Diary", 1, "Fridge");
-                Item ice_cream = new Item(1, "Ice Cream", "10/12/2023", "Diary", 1, "Freezer");
-                Item apples = new Item(2, "Apples", "10/11/2023", "Fruit", 10, "Cabinet");
+                Item milk = new Item(0, "Milk", "4/06/2023", "Dairy", 1, "Fridge");
+                Item ice_cream = new Item(1, "Ice Cream", "4/12/2023", "Dairy", 4, "Freezer");
+                Item apples = new Item(2, "Apples", "4/16/2023", "Fruit", 8, "Cabinet");
+                Item chicken = new Item(3, "Chicken", "4/07/2023", "Fridge", 1, "Fridge");
                 fullInventory = new ArrayList<Item>();
                 fullInventory.add(milk);
                 fullInventory.add(ice_cream);
                 fullInventory.add(apples);
+                fullInventory.add(chicken);
 
                 inventory.addFridgeItem(milk);
                 inventory.addFreezerItem(ice_cream);
                 inventory.addCabinetItem(apples);
+                inventory.addFridgeItem(chicken);
             }
             else{
 //                fullInventory.forEach(item->{
