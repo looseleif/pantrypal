@@ -16,6 +16,8 @@ public class Settings extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
 
+        getSupportActionBar().hide();
+
         ImageButton settingsBackButton = (ImageButton) findViewById(R.id.settings_back_button);
         settingsBackButton.setOnClickListener(new View.OnClickListener() {
             @Override

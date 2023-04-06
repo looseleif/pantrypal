@@ -34,6 +34,8 @@ public class Pantry extends AppCompatActivity {
 
         inventory = createInventory();
 
+        getSupportActionBar().hide();
+
         //create recycler view object and set layout info
         RecyclerView fridgeView = (RecyclerView) findViewById(R.id.FridgeList);
         fridgeView.setHasFixedSize(true);

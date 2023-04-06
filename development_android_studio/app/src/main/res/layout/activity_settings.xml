@@ -12,7 +12,8 @@
         android:layout_height="49dp"
         android:layout_marginTop="20dp"
         android:text="Settings"
-        android:textSize="34sp"
+        android:fontFamily="@font/font2"
+        android:textSize="50sp"
         android:textStyle="bold"
         android:typeface="normal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -45,9 +46,10 @@
             android:layout_height="94dp"
             android:layout_marginBottom="5dp"
             android:text="About"
-            android:textSize="20sp"
+            android:fontFamily="@font/font2"
+            android:textSize="30sp"
             android:textStyle="bold"
-            app:backgroundTint="@color/teal_700" />
+            app:backgroundTint="@color/pantry1" />
 
         <Button
             android:id="@+id/notifications_button"
@@ -55,9 +57,10 @@
             android:layout_height="94dp"
             android:layout_marginBottom="5dp"
             android:text="Notifications"
-            android:textSize="20sp"
+            android:fontFamily="@font/font2"
+            android:textSize="30sp"
             android:textStyle="bold"
-            app:backgroundTint="@color/teal_700" />
+            app:backgroundTint="@color/pantry1" />
 
         <Button
             android:id="@+id/profile"
@@ -65,9 +68,10 @@
             android:layout_height="94dp"
             android:layout_marginBottom="5dp"
             android:text="Profile"
-            android:textSize="20sp"
+            android:fontFamily="@font/font2"
+            android:textSize="25sp"
             android:textStyle="bold"
-            app:backgroundTint="@color/teal_700" />
+            app:backgroundTint="@color/pantry1" />
 
         <Button
             android:id="@+id/lightDark"
@@ -75,9 +79,10 @@
             android:layout_height="94dp"
             android:layout_marginBottom="5dp"
             android:text="Light / Dark Theme"
-            android:textSize="20sp"
+            android:fontFamily="@font/font2"
+            android:textSize="25sp"
             android:textStyle="bold"
-            app:backgroundTint="@color/teal_700" />
+            app:backgroundTint="@color/pantry1" />
 
         <Button
             android:id="@+id/support"
@@ -85,9 +90,10 @@
             android:layout_height="94dp"
             android:layout_marginBottom="5dp"
             android:text="Support"
-            android:textSize="20sp"
+            android:fontFamily="@font/font2"
+            android:textSize="25sp"
             android:textStyle="bold"
-            app:backgroundTint="@color/teal_700" />
+            app:backgroundTint="@color/pantry1" />
 
         <Button
             android:id="@+id/clear_inventory"
@@ -95,7 +101,8 @@
             android:layout_height="94dp"
             android:layout_marginBottom="5dp"
             android:text="Clear Inventory"
-            android:textSize="20sp"
+            android:fontFamily="@font/font2"
+            android:textSize="25sp"
             android:textStyle="bold"
             app:backgroundTint="#FF0000" />
 

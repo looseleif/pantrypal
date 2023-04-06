@@ -18,6 +18,8 @@ public class ReceiptHistoryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_receipt_history);
 
+        getSupportActionBar().hide();
+
         // Initialize and assign variable
         BottomNavigationView bottomNavigationView=findViewById(R.id.bottom_navigation);
 

@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        app:itemBackground="@color/teal_700"
+        app:itemBackground="@color/pantry1"
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
         app:menu="@menu/menu_navigation" />
@@ -40,7 +40,9 @@
                 android:layout_marginTop="0dp"
                 android:layout_weight="1"
                 android:text="Edit"
-                app:backgroundTint="@color/teal_700" />
+                android:textSize="20sp"
+                android:fontFamily="@font/font2"
+                app:backgroundTint="@color/pantry1" />
 
             <Space
                 android:layout_width="wrap_content"

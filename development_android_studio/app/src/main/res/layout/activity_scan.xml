@@ -14,10 +14,11 @@
         android:layout_height="140dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="120dp"
         android:text="Scan Your Receipt"
+        android:fontFamily="@font/font2"
         android:textAlignment="center"
-        android:textSize="50sp"
+        android:textSize="60sp"
         android:textStyle="bold" />
 
     <ImageButton
@@ -55,7 +56,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        app:itemBackground="@color/teal_700"
+        app:itemBackground="@color/pantry1"
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
         app:menu="@menu/menu_navigation" />
@@ -70,7 +71,9 @@
         android:layout_marginStart="143dp"
         android:layout_marginTop="55dp"
         android:onClick="receiptHistory"
-        android:text="Receipt History"
-        app:backgroundTint="@color/teal_700" />
+        android:fontFamily="@font/font2"
+        android:text="History"
+        android:textSize="30sp"
+        app:backgroundTint="@color/pantry1" />
 
 </RelativeLayout>

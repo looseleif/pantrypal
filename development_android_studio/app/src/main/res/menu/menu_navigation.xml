@@ -4,19 +4,23 @@
     <item
         android:id="@+id/home"
         android:title="Home"
+        android:fontFamily="@font/font2"
         android:icon="@drawable/home"/>
     <item
         android:id="@+id/scan"
         android:title="Scan"
+        android:fontFamily="@font/font2"
         android:icon="@drawable/scannn"/>
     <item
         android:id="@+id/pantry"
         android:icon="@drawable/cabinet"
         android:iconTintMode="add"
+        android:fontFamily="@font/font2"
         android:title="Pantry" />
     <item
         android:id="@+id/recipe"
         android:title="Recipe"
+        android:fontFamily="@font/font2"
         android:icon="@drawable/recipe"/>
 
 </menu>

@@ -25,6 +25,8 @@ public class ScanConfirm extends AppCompatActivity {
         //OR
         imageView.setImageResource(R.drawable.receipt_eg);
 
+        getSupportActionBar().hide();
+
         //Bundle bundle = getIntent().getExtras();
         //if (bundle != null) {
             //int resId = bundle.getInt("resId");

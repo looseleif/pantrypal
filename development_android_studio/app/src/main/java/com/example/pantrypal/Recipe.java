@@ -44,6 +44,8 @@ public class Recipe extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe);
 
+        getSupportActionBar().hide();
+
         Button findRecipesButton = findViewById(R.id.done);
 
         // Add an OnClickListener to the button

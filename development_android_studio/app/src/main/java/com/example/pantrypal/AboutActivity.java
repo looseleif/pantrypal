@@ -14,6 +14,8 @@ public class AboutActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_about);
 
+        getSupportActionBar().hide();
+
         ImageButton aboutBackButton = (ImageButton) findViewById(R.id.about_back_button);
         aboutBackButton.setOnClickListener(new View.OnClickListener() {
             @Override

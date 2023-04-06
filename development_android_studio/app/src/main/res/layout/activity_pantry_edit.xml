@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
-        app:itemBackground="@color/teal_700"
+        app:itemBackground="@color/pantry1"
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
         app:menu="@menu/menu_navigation" />
@@ -31,8 +31,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            app:backgroundTint="@color/teal_700"
+            app:backgroundTint="@color/pantry1"
+            android:fontFamily="@font/font2"
+            android:textSize="20sp"
             android:text="Done" />
+
 
         <LinearLayout
             android:layout_width="match_parent"

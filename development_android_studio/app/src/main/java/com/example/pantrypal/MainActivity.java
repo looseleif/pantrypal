@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         if(expiringSoonInventoryList.isEmpty()){
-            Item emptyReceiptsItem = new Item(0, "You have not scanned any receipts yet!", "", "",0 , "");
+            Item emptyReceiptsItem = new Item(0, "Please Scan a receipt to begin!", "", "",0, "");
             recentReceipts.add(emptyReceiptsItem);
         } else {
             Item anyReceiptsItem = new Item(0, "Receipt 1", "4/6/2023", "", 1, "");

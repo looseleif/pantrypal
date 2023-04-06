@@ -12,9 +12,10 @@
         android:layout_height="48dp"
         android:layout_marginTop="20dp"
         android:text="Notifications"
-        android:textSize="34sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         android:typeface="normal"
+        android:fontFamily="@font/font2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.587"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,24 +50,32 @@
             android:id="@+id/daily"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/font2"
+            android:textSize="20sp"
             android:text="Daily" />
 
         <RadioButton
             android:id="@+id/few"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/font2"
+            android:textSize="20sp"
             android:text="A Few Times A Week" />
 
         <RadioButton
             android:id="@+id/weekly"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/font2"
+            android:textSize="20sp"
             android:text="Weekly" />
 
         <RadioButton
             android:id="@+id/never"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/font2"
+            android:textSize="20sp"
             android:text="Never" />
     </RadioGroup>
 
