@@ -64,7 +64,7 @@ public class Recipe extends AppCompatActivity {
         Item milk = new Item(0, "Milk", "4/06/2023", "Diary", 1, "Fridge");
         Item chicken = new Item(1, "Chicken", "4/07/2023", "Diary", 1, "Freezer");
         Item ice_cream = new Item(2, "Ice Cream", "4/12/2023", "Diary", 1, "Freezer");
-        Item apples = new Item(3, "Apples", "10/11/2023", "Fruit", 3, "Cabinet");
+        Item apples = new Item(3, "Apples", "4/16/2023", "Fruit", 3, "Cabinet");
         inventory.addFridgeItem(milk);
         inventory.addFridgeItem(chicken);
         inventory.addFreezerItem(ice_cream);
