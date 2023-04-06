@@ -34,23 +34,19 @@
 
             <Button
                 android:id="@+id/edit"
-                android:layout_width="130dp"
-                android:layout_height="50dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="0dp"
-                android:layout_marginRight="160dp"
                 android:layout_weight="1"
-                app:backgroundTint="@color/teal_700"
-                android:text="Edit" />
+                android:text="Edit"
+                app:backgroundTint="@color/teal_700" />
 
-            <Button
-                android:id="@+id/find_recipe"
-                android:layout_width="130dp"
-                android:layout_height="50dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="0dp"
-                app:backgroundTint="@color/teal_700"
-                android:text="Find Recipe" />
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="4" />
+
         </LinearLayout>
 
         <LinearLayout
@@ -64,7 +60,9 @@
                 android:layout_height="match_parent"
                 android:paddingLeft="10dp"
                 android:text="Fridge"
-                android:textSize="15sp" />
+                android:textStyle="bold"
+                android:typeface="normal"
+                tools:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textView6"
@@ -74,7 +72,9 @@
                 android:paddingRight="10dp"
                 android:text="Amount"
                 android:textAlignment="textEnd"
-                android:textSize="15sp" />
+                android:textStyle="bold"
+                android:typeface="normal"
+                tools:textSize="20sp" />
 
             <TextView
                 android:id="@+id/textView14"
@@ -84,7 +84,9 @@
                 android:paddingRight="10dp"
                 android:text="Expiration Date"
                 android:textAlignment="textEnd"
-                android:textSize="15sp" />
+                android:textStyle="bold"
+                android:typeface="normal"
+                tools:textSize="20sp" />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -98,7 +100,9 @@
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
             android:text="Freezer"
-            android:textSize="15sp" />
+            android:textStyle="bold"
+            android:typeface="normal"
+            tools:textSize="20sp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/FreezerList"
@@ -111,8 +115,9 @@
             android:layout_height="wrap_content"
             android:paddingLeft="10dp"
             android:text="Cabinet"
-            android:textSize="15sp"
-            tools:autoSizeMaxTextSize="15sp" />
+            android:textStyle="bold"
+            android:typeface="normal"
+            tools:textSize="20sp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/CabinetList"

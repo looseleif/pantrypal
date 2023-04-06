@@ -31,13 +31,23 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="300dp"
-        android:layout_height="541dp"
+        android:layout_width="306dp"
+        android:layout_height="592dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/about_button"
+            android:layout_width="match_parent"
+            android:layout_height="94dp"
+            android:layout_marginBottom="5dp"
+            android:text="About"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/teal_700" />
 
         <Button
             android:id="@+id/notifications_button"
@@ -78,6 +88,16 @@
             android:textSize="20sp"
             android:textStyle="bold"
             app:backgroundTint="@color/teal_700" />
+
+        <Button
+            android:id="@+id/clear_inventory"
+            android:layout_width="match_parent"
+            android:layout_height="94dp"
+            android:layout_marginBottom="5dp"
+            android:text="Clear Inventory"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:backgroundTint="#FF0000" />
 
     </LinearLayout>
 
