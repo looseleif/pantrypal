@@ -23,7 +23,7 @@ public class ScanConfirm extends AppCompatActivity {
         imageView = findViewById(R.id.confirm_image);
         //imageView.setImageBitmap(bitmap);
         //OR
-        imageView.setImageResource(R.drawable.receipt_ex);
+        imageView.setImageResource(R.drawable.receipt_eg);
 
         //Bundle bundle = getIntent().getExtras();
         //if (bundle != null) {
@@ -53,6 +53,6 @@ public class ScanConfirm extends AppCompatActivity {
         Bitmap photo = (Bitmap) data.getExtras().get("data");
         //imageView.setImageBitmap(photo);
         // OR
-        imageView.setImageResource(R.drawable.receipt_ex);
+        imageView.setImageResource(R.drawable.receipt_eg);
     }
 }

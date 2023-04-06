@@ -11,7 +11,7 @@ import android.provider.MediaStore;
 import android.view.MenuItem;
 import android.view.View;
 import android.content.Intent;
-import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -21,7 +21,7 @@ import java.io.ByteArrayOutputStream;
 public class Scan extends AppCompatActivity {
     private static final int pic_id = 100;
 
-    Button camera_open;
+    ImageButton camera_open;
     ImageView click_image;
 
     @Override
