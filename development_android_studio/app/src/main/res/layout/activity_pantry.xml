@@ -139,7 +139,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/FreezerList"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="114dp" />
 
         <TextView
             android:id="@+id/textView4"
@@ -156,7 +156,23 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/CabinetList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="35dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="82dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/addItem"
+                android:layout_width="84dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="0dp"
+                android:layout_weight="1"
+                android:backgroundTint="#FFFFFF"
+                app:srcCompat="@android:drawable/ic_input_add"
+                tools:layout_marginLeft="250dp" />
+        </LinearLayout>
 
     </LinearLayout>
 

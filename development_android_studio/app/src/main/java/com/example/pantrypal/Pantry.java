@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import android.util.Log;
 
@@ -66,6 +67,15 @@ public class Pantry extends AppCompatActivity {
 //                Bundle bundle = new Bundle();
 //                bundle.putParcelableArrayList("itemList", fullInventory);
 //                intent.putExtras(bundle);
+                startActivity(intent);
+            }
+        });
+
+        ImageButton addButton = (ImageButton) findViewById(R.id.addItem);
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Pantry.this, ItemAdd.class);
                 startActivity(intent);
             }
         });
@@ -151,15 +161,6 @@ public class Pantry extends AppCompatActivity {
                 inventory.addFridgeItem(chicken);
             }
             else{
-//                fullInventory.forEach(item->{
-//                    if(item.getI_Location().equals("Cabinet")){
-//                        inventory.addCabinetItem(item);
-//                    } else if (item.getI_Location().equals("Fridge")) {
-//                        inventory.addFridgeItem(item);
-//                    }else{
-//                        inventory.addFreezerItem(item);
-//                    }
-//                });
                 fridge.forEach(item->{
                     inventory.addFridgeItem(item);
                 });
@@ -178,6 +179,7 @@ public class Pantry extends AppCompatActivity {
         super.onPause();
         SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
+
         Gson gson = new Gson();
         String json = gson.toJson(fullInventory);
         editor.putString("task list", json);

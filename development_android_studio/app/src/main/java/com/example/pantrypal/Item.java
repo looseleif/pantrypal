@@ -35,15 +35,14 @@ public class Item implements Parcelable{
      * Location of item
      */
     private String i_Location;
-
-    public Item(int id, String date){
-        this.i_Id = Integer.valueOf(id);
-        this.i_Name = Integer.toString(id);
+    public Item(String name, String date, int amount, String location){
+        this.i_Id = 0;
+        this.i_Name = name;
         this.i_Date = date;
         this.i_Category = "Uncategorized";
-        this.i_Amount = 1;
+        this.i_Amount = amount;
+        this.i_Location = location;
     }
-
     public Item(int id, String name, String date, String category, int amount, String location){
         this.i_Id = Integer.valueOf(id);;
         this.i_Name = name;

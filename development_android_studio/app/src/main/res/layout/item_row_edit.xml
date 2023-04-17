@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="horizontal">
 
+
     <TextView
         android:id="@+id/item_name"
         android:layout_width="215dp"
