@@ -81,12 +81,14 @@ public class ItemEditAdapter extends RecyclerView.Adapter<ItemEditAdapter.ItemEd
                         }.getType();
                         Gson gson = new Gson();
                         ArrayList<Item> inventory = gson.fromJson(json, type);
-                        if(!(editable.toString().equals(""))) {
-                            inventory.get(holder.getBindingAdapterPosition()).setI_Amount(Integer.valueOf(editable.toString()).intValue());
+                        int amount_int;
+                        try{
+                           amount_int =  Integer.valueOf(editable.toString()).intValue();
+                        }catch(Exception e){
+                            amount_int = 0;
                         }
-                        else {
-                            inventory.get(holder.getBindingAdapterPosition()).setI_Amount(0);
-                        }
+
+                        inventory.get(holder.getBindingAdapterPosition()).setI_Amount(amount_int);
 
                         SharedPreferences.Editor ed = sharedPreferences.edit();
                         String update_json = gson.toJson(inventory);

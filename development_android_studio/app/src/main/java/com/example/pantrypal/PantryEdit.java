@@ -102,80 +102,42 @@ public class PantryEdit extends AppCompatActivity {
     }
     
     private Inventory createInventory(){
-            Inventory inventory = new Inventory();
+        Inventory inventory = new Inventory();
 
-            SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
-            Gson gson = new Gson();
-            String json = sharedPreferences.getString("task list", null);
-            Type type = new TypeToken<ArrayList<Item>>() {}.getType();
-            fullInventory = gson.fromJson(json, type);
-
-            ArrayList<Item> fridge = new ArrayList<Item>();
-            ArrayList<Item> freezer = new ArrayList<Item>();
-            ArrayList<Item> cabinet = new ArrayList<Item>();
-
-            if(sharedPreferences.contains("FridgeList")){
-                json = sharedPreferences.getString("FridgeList", null);
-                type = new TypeToken<ArrayList<Item>>() {}.getType();
-                fridge = gson.fromJson(json, type);
-            }
-            if(sharedPreferences.contains("FreezerList")){
-                json = sharedPreferences.getString("FreezerList", null);
-                type = new TypeToken<ArrayList<Item>>() {}.getType();
-                freezer = gson.fromJson(json, type);
-            }
-            if(sharedPreferences.contains("CabinetList")){
-                json = sharedPreferences.getString("CabinetList", null);
-                type = new TypeToken<ArrayList<Item>>() {}.getType();
-                cabinet = gson.fromJson(json, type);
-            }
-
-            if (fullInventory == null) {
-                Item milk = new Item(0, "Milk", "10/11/2023", "Diary", 1, "Fridge");
-                Item ice_cream = new Item(1, "Ice Cream", "10/12/2023", "Diary", 1, "Freezer");
-                Item apples = new Item(2, "Apples", "10/11/2023", "Fruit", 10, "Cabinet");
-                fullInventory = new ArrayList<Item>();
-                fullInventory.add(milk);
-                fullInventory.add(ice_cream);
-                fullInventory.add(apples);
-
-                inventory.addFridgeItem(milk);
-                inventory.addFreezerItem(ice_cream);
-                inventory.addCabinetItem(apples);
-            }
-            else{
-                fridge.forEach(item->{
-                    inventory.addFridgeItem(item);
-                });
-                freezer.forEach(item->{
-                    inventory.addFreezerItem(item);
-                });
-                cabinet.forEach(item->{
-                    inventory.addCabinetItem(item);
-                });
-            }
-        return inventory;
-    }
-
-    @Override
-    protected void onStop(){
-        super.onStop();
         SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
         Gson gson = new Gson();
-        String json = gson.toJson(fullInventory);
-        editor.putString("task list", json);
+        String json = sharedPreferences.getString("task list", null);
+        Type type = new TypeToken<ArrayList<Item>>() {}.getType();
+        fullInventory = gson.fromJson(json, type);
 
-//        json = gson.toJson(inventory.getfridgeList());
-//        editor.putString("FridgeList", json);
-//
-//        json = gson.toJson(inventory.getfreezerList());
-//        editor.putString("FreezerList", json);
-//
-//        json = gson.toJson(inventory.getcabinetList());
-//        editor.putString("CabinetList", json);
-        editor.apply();
+        ArrayList<Item> fridge = new ArrayList<Item>();
+        ArrayList<Item> freezer = new ArrayList<Item>();
+        ArrayList<Item> cabinet = new ArrayList<Item>();
 
-        Log.i("data saved", "Saved data!");
+        if(sharedPreferences.contains("FridgeList")){
+            json = sharedPreferences.getString("FridgeList", null);
+            type = new TypeToken<ArrayList<Item>>() {}.getType();
+            fridge = gson.fromJson(json, type);
+        }
+        if(sharedPreferences.contains("FreezerList")){
+            json = sharedPreferences.getString("FreezerList", null);
+            type = new TypeToken<ArrayList<Item>>() {}.getType();
+            freezer = gson.fromJson(json, type);
+        }
+        if(sharedPreferences.contains("CabinetList")){
+            json = sharedPreferences.getString("CabinetList", null);
+            type = new TypeToken<ArrayList<Item>>() {}.getType();
+            cabinet = gson.fromJson(json, type);
+        }
+        fridge.forEach(item->{
+            inventory.addFridgeItem(item);
+        });
+        freezer.forEach(item->{
+            inventory.addFreezerItem(item);
+        });
+        cabinet.forEach(item->{
+            inventory.addCabinetItem(item);
+        });
+        return inventory;
     }
 }

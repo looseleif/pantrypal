@@ -143,57 +143,39 @@ public class Pantry extends AppCompatActivity {
             type = new TypeToken<ArrayList<Item>>() {}.getType();
             cabinet = gson.fromJson(json, type);
         }
+        fridge.forEach(item->{
+            inventory.addFridgeItem(item);
+        });
+        freezer.forEach(item->{
+            inventory.addFreezerItem(item);
+        });
+        cabinet.forEach(item->{
+            inventory.addCabinetItem(item);
+        });
 
-            if (fullInventory == null) {
-                Item milk = new Item(0, "Milk", "4/06/2023", "Dairy", 1, "Fridge");
-                Item ice_cream = new Item(1, "Ice Cream", "4/12/2023", "Dairy", 4, "Freezer");
-                Item apples = new Item(2, "Apples", "4/16/2023", "Fruit", 8, "Cabinet");
-                Item chicken = new Item(3, "Chicken", "4/07/2023", "Fridge", 1, "Fridge");
-                fullInventory = new ArrayList<Item>();
-                fullInventory.add(milk);
-                fullInventory.add(ice_cream);
-                fullInventory.add(apples);
-                fullInventory.add(chicken);
-
-                inventory.addFridgeItem(milk);
-                inventory.addFreezerItem(ice_cream);
-                inventory.addCabinetItem(apples);
-                inventory.addFridgeItem(chicken);
-            }
-            else{
-                fridge.forEach(item->{
-                    inventory.addFridgeItem(item);
-                });
-                freezer.forEach(item->{
-                    inventory.addFreezerItem(item);
-                });
-                cabinet.forEach(item->{
-                    inventory.addCabinetItem(item);
-                });
-            }
         return inventory;
     }
 
-    @Override
-    protected void onPause(){
-        super.onPause();
-        SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-
-        Gson gson = new Gson();
-        String json = gson.toJson(fullInventory);
-        editor.putString("task list", json);
-
-        json = gson.toJson(inventory.getfridgeList());
-        editor.putString("FridgeList", json);
-
-        json = gson.toJson(inventory.getfreezerList());
-        editor.putString("FreezerList", json);
-
-        json = gson.toJson(inventory.getcabinetList());
-        editor.putString("CabinetList", json);
-        editor.apply();
-
-        Log.i("data saved", "Saved data!");
-    }
+//    @Override
+//    protected void onPause(){
+//        super.onPause();
+//        SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
+//        SharedPreferences.Editor editor = sharedPreferences.edit();
+//
+//        Gson gson = new Gson();
+//        String json = gson.toJson(fullInventory);
+//        editor.putString("task list", json);
+//
+//        json = gson.toJson(inventory.getfridgeList());
+//        editor.putString("FridgeList", json);
+//
+//        json = gson.toJson(inventory.getfreezerList());
+//        editor.putString("FreezerList", json);
+//
+//        json = gson.toJson(inventory.getcabinetList());
+//        editor.putString("CabinetList", json);
+//        editor.apply();
+//
+//        Log.i("data saved", "Saved data!");
+//    }
 }
