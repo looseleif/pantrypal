@@ -53,7 +53,11 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemViewHolder
         holder.textViewName.setText(item.getI_Name());
         holder.textViewDate.setText(item.getI_Date());
         holder.textViewAmount.setText(String.valueOf(item.getI_Amount()));
-
+        String name = mCtx.getResources().getResourceEntryName(mRecyclerView.getId());
+        if(name.equals("recentReceiptList") || name.equals("expiringList")){
+            holder.deleteButton.setVisibility(View.GONE);
+            holder.deleteButton.setLayoutParams(new RecyclerView.LayoutParams(0, 0));
+        }
         holder.deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
