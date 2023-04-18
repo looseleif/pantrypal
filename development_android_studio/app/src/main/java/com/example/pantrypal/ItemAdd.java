@@ -37,6 +37,8 @@ public class ItemAdd extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, items);
         dropdown.setAdapter(adapter);
 
+        dropdown.setSelection(0);
+
         EditText name = (EditText) findViewById(R.id.addItemName);
         EditText amount = (EditText) findViewById(R.id.addItemAmount);
         EditText date = (EditText) findViewById(R.id.addItemDate);

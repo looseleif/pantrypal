@@ -44,6 +44,8 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("shared preferences", MODE_PRIVATE);
         Gson gson = new Gson();
         String json;
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
 
         //if the pantry list has items, add them to expiring soon
         //Get data fromm JSON and add to respective lists.
@@ -56,7 +58,13 @@ public class MainActivity extends AppCompatActivity {
                 expiringSoonInventory.addFridgeItem(item);
                 expiringSoonInventoryList.add(item);
             });
+        }else{
+            ArrayList empty = new ArrayList<>();
+            json = gson.toJson(empty);
+            editor.putString("FridgeList", json);
+            editor.apply();
         }
+
         if(sharedPreferences.contains("FreezerList")){
             json = sharedPreferences.getString("FreezerList", null);
             Type type = new TypeToken<ArrayList<Item>>() {}.getType();
@@ -65,6 +73,11 @@ public class MainActivity extends AppCompatActivity {
                 expiringSoonInventory.addFreezerItem(item);
                 expiringSoonInventoryList.add(item);
             });
+        }else{
+            ArrayList empty = new ArrayList<>();
+            json = gson.toJson(empty);
+            editor.putString("FreezerList", json);
+            editor.apply();
         }
         if(sharedPreferences.contains("CabinetList")){
             json = sharedPreferences.getString("CabinetList", null);
@@ -74,6 +87,11 @@ public class MainActivity extends AppCompatActivity {
                 expiringSoonInventory.addCabinetItem(item);
                 expiringSoonInventoryList.add(item);
             });
+        }else{
+            ArrayList empty = new ArrayList<>();
+            json = gson.toJson(empty);
+            editor.putString("CabinetList", json);
+            editor.apply();
         }
 
         if(expiringSoonInventoryList.isEmpty()){
